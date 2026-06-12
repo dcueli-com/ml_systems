@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Custom
+## Datasets
+src/activities/**/dataset/
+## Reports
+src/activities/reports/
