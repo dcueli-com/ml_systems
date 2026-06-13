@@ -1,0 +1,15 @@
+global:
+  scrape_interval: 15s
+
+rule_files:
+  - "/etc/prometheus/alert.down_container.yml"
+  - "/etc/prometheus/alert.yarn_bottleneck.yml"
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'hadoop-jmx'
+    static_configs:
+      - targets: ['namenode:9010', 'datanode1:9010', 'datanode2:9010']
